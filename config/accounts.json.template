@@ -1,0 +1,13 @@
+{
+  "accounts": [
+    {
+      "company_name": "디앤드디",
+      "company_code": "52867",
+      "user_id": "your_user_id",
+      "user_pw": "your_password"
+    }
+  ],
+  "created_at": "template_file",
+  "note": "이 파일은 로그인 다이얼로그에서 자동 생성되었습니다",
+  "security": "비밀번호는 평문으로 저장되므로 보안에 주의하세요"
+}
