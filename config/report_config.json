@@ -1,0 +1,77 @@
+{
+  "paths": {
+    "base_dir": "auto_detect",
+    "staff_file": "판매_담당자목록.xlsx",
+    "staff_sheet": "담당자목록",
+    "sales_raw_data": "data/sales_raw_data",
+    "receivable_raw_data": "data/receivable_calculator_raw_data",
+    "receivables_raw_data": "data/receivables",
+    "processed_data": "data/processed",
+    "report_output": "data/report",
+    "downloads": "data/downloads",
+    "weekly_report_save": "data/report"
+  },
+  "date_settings": {
+    "week_start_day": "friday",
+    "week_end_day": "thursday",
+    "report_period_days": 5,
+    "auto_calculate_period": true
+  },
+  "sales": {
+    "exclude_codes": [],
+    "default_num_months": 3,
+    "retry_count": 3,
+    "download_timeout": 60,
+    "category_mappings": {"수출": "무역"},
+    "category_order": ["구동기", "일반부품", "무역", "티케이"],
+    "exclude_products": []
+  },
+  "receivables": {
+    "target_companies": ["디앤드디", "디앤아이"],
+    "collection_day": "friday",
+    "retry_count": 5,
+    "download_timeout": 120,
+    "collection_delay": 10,
+    "batch_size": 6,
+    "batch_delay": 30,
+    "file_naming_format": "{company}_채권잔액분석_{date}.xlsx"
+  },
+  "report": {
+    "kpi_target": {"장기미수채권_비율": 18.25},
+    "targets_2025": {
+      "구동기": 922,
+      "일반부품": 1015,
+      "티케이": 42,
+      "무역": 143
+    }
+  },
+  "selenium": {
+    "headless": true,
+    "implicit_wait": 15,
+    "page_load_timeout": 60,
+    "script_timeout": 30,
+    "detach_browser": true,
+    "disable_automation_flags": true,
+    "window_size": "1920,1080",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "disable_images": false,
+    "disable_javascript": false
+  },
+  "companies": {
+    "디앤드디": {
+      "default_category": null,
+      "month_xpath_format": "//a[text()='{month}']",
+      "collect_receivables": true
+    },
+    "디앤아이": {
+      "default_category": "구동기",
+      "month_xpath_format": "//a[text()='{month}']",
+      "collect_receivables": true
+    },
+    "후지리프트코리아": {
+      "default_category": "무역",
+      "month_xpath_format": "//a[text()='{int_month}월']",
+      "collect_receivables": false
+    }
+  }
+}
